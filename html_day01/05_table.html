@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--表格 由行和单元格组成-->
+<table border="1px" width="500px" height="500px">
+    <!--table row 一行-->
+    <tr>
+        <!--        table head cell 自带加粗和居中-->
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>班级</th>
+    </tr>
+    <tr>
+        <!--        table data cell-->
+        <td>张三</td>
+        <td>23</td>
+        <td>001</td>
+    </tr>
+    <tr>
+        <td>李四</td>
+        <td>30</td>
+        <td>003</td>
+    </tr>
+</table>
+
+<!--单元格合并， 为单元格添加属性
+colspan:跨列合并
+rowspan:跨行合并
+取无单位的数值 表示包含资自身在内合并几个单元格
+发生单元格合并，需要删除被合并的单元格以保证结构完整
+-->
+
+<table border="1px" height="300px" width="300px">
+    <tr>
+        <!--        table head cell 自带加粗和居中-->
+        <td colspan="2">姓名</td>
+        <td>年龄</td>
+    </tr>
+    <tr>
+        <td rowspan="2">姓名</td>
+        <td>年龄</td>
+        <td>班级</td>
+    </tr>
+    <tr>
+        <td>年龄</td>
+        <!--        删除被合并的单元格保证结构完整-->
+        <td>班级</td>
+    </tr>
+</table>
+
+
+<!--表格的行分组：
+
+将若干行划分为一组 表示表头 表尾 表主体
+默认情况，所有的行都会自动添加到tbody中显示
+
+-->
+
+<table border="1px" width="300px" height="300px">
+    <thead>
+    <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+    </tr>
+    </thead>
+
+    <tfoot>
+    <tr>
+        <td colspan="2">合计</td>
+    </tr>
+    </tfoot>
+
+    <tbody>
+    <tr>
+        <td>张三</td>
+        <td>23</td>
+    </tr>
+    <tr>
+        <td>张三</td>
+        <td>23</td>
+    </tr>
+    <tr>
+        <td>张三</td>
+        <td>23</td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>

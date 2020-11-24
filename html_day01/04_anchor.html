@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--超链接 跳转至其他资源文件-->
+<!--href必填 指定链接地址 网络路径必须写协议-->
+<!--target属性 设置打开方式 默认在当前窗口打开-->
+<a href="http://www.baidu.com">hello world</a>
+<a href="01_basic.html" target="_blank">hello world</a>
+
+<!--图片超链接-->
+<a href="http://taobao.com" target="_blank">
+    <img src="123.jpg" alt="">
+</a>
+
+<!--href的特殊取值-->
+<!--空表示刷新页面-->
+<a href="">href=""</a>
+
+<!--#表示锚点 连接至本页 不会刷新页面 会修改URL-->
+<!--锚点链接  参见01_basic.html-->
+<a href="#">href="#"</a>
+
+<!--javascript:void(0) 阻止超链接默认的点击跳转功能 允许自定义 点击事件-->
+<a href="javascript:void(0)">javascript:void(0)</a>
+
+</body>
+</html>
