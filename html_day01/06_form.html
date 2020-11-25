@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<!--
+action为指定的提交地址
+enctype为编码类型
+二进制需要设置为multipart/form-data  图片 音视频 文件
+-->
+<form action="/login" method="get" enctype="">
+    <p>
+        <!--
+        type
+        name
+        placeholder
+        value
+        readonly-->
+        用户姓名：
+        <input type="text" name="uname" placeholder="输入姓名" value="zs">
+    </p>
+    <p>
+        用户密码：
+        <input type="password" name="upwd" placeholder="输入密码">
+    </p>
+    <p>
+        用户性别：
+        <!--一组控件的名称必须保持一致-->
+        <input type="radio" value="male" name="sex" checked>男
+        <input type="radio" value="female" name="sex">女
+    </p>
+    <!--label for id 实现文本与控件绑定-->
+    <p>
+        兴趣爱好：
+        <input id="sing" type="checkbox" name="hobby" value="sing"><label for="sing">唱歌</label>
+        <input id="dance" type="checkbox" name="hobby" value="dance"><label for="dance">跳舞</label>
+        <input id="basketball" type="checkbox" name="hobby" value="basketball"><label for="basketball">打篮球</label>
+    </p>
+
+    <!--文件选择框：二进制必须使用post方式并修改编码类型-->
+    <p>
+        用户头像：
+        <input type="file" name="uimg">
+    </p>
+
+    <!--隐藏域：发送当前页面附加信息 对用户不可见 服务器必需的数据通过隐藏域提交-->
+    <p>
+        <input type="hidden" name="uid" value="001">
+    </p>
+
+    <!--下拉菜单-->
+    <p>
+        所在地址：
+        <select name="city">
+            <option value="bj">北京</option>
+            <option value="sh">上海</option>
+            <option value="gz">广州</option>
+            <option value="sz">深圳</option>
+        </select>
+    </p>
+
+    <!--多行文本-->
+    <p>
+        个人介绍：
+        <textarea name="uinfo">
+
+    </textarea>
+    </p>
+
+<!--    功能按钮：提交、重置、普通按钮
+可以使用value设置按钮的显示文本-->
+<!--提交按钮，剪辑师将数据发送到服务器-->
+    <input type="submit" value="注册">
+    <input type="reset" value="清空">
+    <input type="button" value="点击">
+
+<!--button按钮
+form内 等价于提交按钮
+form外 等价于普通按钮 需要自定义点击处理-->
+    <button>form内</button>
+</form>
+<button>form外</button>
+</body>
+</html>
