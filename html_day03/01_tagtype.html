@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<!--
+块元素独占一行，可以手动设置宽高 body div h1~h6 p ul ol li form
+行内元素可与其他元素共行 不能手动设置宽高，由内容决定 span label b strong i s u sub sup a
+行内块元素既可共行 又能手动调整宽高 : img input button (表单控件)
+-->
+    <style>
+        a, p {
+            width: 100px;
+            height: 100px;
+            background-color: red
+        }
+
+        input{
+            width: 100px;
+            height: 50px;
+            /*行内元素与行内块元素 默认按照文本基础线对齐*/
+            vertical-align: bottom;
+        }
+    </style>
+
+
+</head>
+<body>
+<a href="">超链接</a>
+<b>加粗</b>
+<input type="text">
+<img src="12.jpg">
+<h1>标题</h1>
+<p>段落</p>
+<div>容器</div>
+
+<ol>
+    <li>列表</li>
+</ol>
+
+<form>表单</form>
+
+<table>
+    <tr>
+        <td>表格</td>
+    </tr>
+</table>
+
+</body>
+</html>

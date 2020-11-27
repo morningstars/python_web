@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /*垂直方向 外边距合并*/
+       /*子元素的margin-top作用于父元素上 可以为父元素添加顶部边框或者设置父元素的padding-top:0.1px;
+       垂直方向外边距 取最大值*/
+
+        /*水平方向 行内元素对宽高，上下边距不支持
+       水平方向外边距 叠加显示
+        */
+        body{
+            margin: 0;
+        }
+
+        /*默认带有外边距的元素  清除样式*/
+        body,h1,h2,h3,h4,h5,h6,p,ul,ol{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        h1{
+            height: 300px;
+            width: 300px;
+            border: 10px solid red;
+            padding: 50px;
+            /*4个值 上 右 下 左*/
+            padding: 10px 20px 30px 40px;
+        }
+        ul{
+            padding-left: 0;
+        }
+
+        div{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+        #box{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+
+<div>
+    margin表示外边距
+</div>
+<div id="box">
+
+</div>
+
+<h1>内边距表示内容框与边框之间的距离</h1>
+
+<ul>
+    <li>hello</li>
+</ul>
+
+
+</body>
+</html>

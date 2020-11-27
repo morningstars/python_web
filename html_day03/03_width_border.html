@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div,button,h1{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            /*溢出处理  visible(默认) hidden  scroll  auto*/
+            overflow: scroll;
+            /*尺寸计算方式
+            content-box: width/height + margin + padding + border
+            border-box: width/height + margin
+            */
+            box-sizing: content-box;
+        }
+        h2{
+            width: 200px;
+            height: 100px;
+        }
+        #d1,i{
+            width: 0;
+            height: 0;
+            /*调整元素类型为行内块模式*/
+            display: inline-block;
+            margin: 0;
+            /*border-top: 10px solid red;*/
+            /*border-left: 10px solid transparent;*/
+            /*border-bottom: 10px solid transparent;*/
+            /*border-right: 10px solid transparent;*/
+            border: 10px solid transparent;
+            border-left: 10px solid red;
+        }
+        #d2{
+            border: 10px dotted green;
+        }
+        #d3{
+            border: 10px dashed gray;
+        }
+        #d4{
+            border-radius: 100px;
+            /*border-radius: 50%;*/
+            border: 10px double pink;
+        }
+        #d5{
+            border: solid;
+        }
+
+        input{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+<!--内容溢出-->
+<h1>盒模型盒模型盒模型盒模型盒模型盒模型盒模型盒模型盒模型盒模型盒模型盒模</h1>
+<div>
+    div
+</div>
+
+<button>
+    按钮
+</button>
+
+
+<h2 id="d1"></h2>
+<i></i>
+<h2 id="d2"></h2>
+<h2 id="d3"></h2>
+<h2 id="d4"></h2>
+<h2 id="d5"></h2>
+
+
+<input type="text">
+
+</body>
+</html>
