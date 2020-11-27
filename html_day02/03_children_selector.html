@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background-color: lightgray;
+        }
+        span{
+            background-color: pink;
+        }
+        /*后代选择器 空格隔开*/
+        div span{
+            background-color: yellow;
+        }
+        /*子代选择器 >隔开*/
+        div>span{
+            background-color: purple;
+        }
+
+    /*    伪类选择器
+    超链接独有的伪类选择器
+    :link 访问前
+    :visited 访问后
+    动态伪类
+    :hover 鼠标悬停
+    :active 鼠标点按
+    表单控件的状态
+    :focus 输入框焦点状态
+    */
+        /*a:link{*/
+        /*    color: black;*/
+        /*}*/
+        /*a:visited{*/
+        /*    color: blue;*/
+        /*}*/
+        /*a:hover{*/
+        /*    color: red;*/
+        /*}*/
+        /*a:active{*/
+        /*    background-color: yellow;*/
+        /*}*/
+
+        /*超链接常用的两种*/
+        a{
+            background-color: orange;
+            color: white;
+            /*取消超链接下划线*/
+            text-decoration: none;
+        }
+
+        a:hover{
+            background-color: green;
+        }
+
+        input:focus{
+        /*取消轮廓线*/
+            outline: none;
+        }
+    </style>
+
+</head>
+<body>
+
+<a href="index.css">超链接</a>
+
+
+
+<div>
+    <span>div->span</span>
+    <p>
+        div->p
+        <span>div->p->span</span>
+    </p>
+</div>
+
+<input type="text">
+
+</body>
+</html>

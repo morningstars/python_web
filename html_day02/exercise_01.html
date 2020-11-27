@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a {
+            color: white;
+            background-color: orange;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: red;
+        }
+
+        ol, ul {
+            /*取消内边距*/
+            padding: 0;
+            /*取消列表的项目符号*/
+            list-style: none;
+            background-color: pink;
+        }
+
+        .select ol {
+            /*设置隐藏*/
+            display: none;
+        }
+
+        .select:hover ol {
+            /*设置显示*/
+            display: block;
+        }
+
+
+    </style>
+</head>
+<body>
+<div style="background-color: orange">
+    <a>天猫</a>
+    <a>淘宝</a>
+    <a>京东</a>
+    <a>苏宁 </a>
+</div>
+
+
+<ul>
+    <li class="select">
+        选择
+        <ol class="enum">
+            <li>天猫</li>
+            <li>淘宝</li>
+            <li>京东</li>
+            <li>苏宁</li>
+        </ol>
+    </li>
+</ul>
+
+<ol>
+    <li>awhdh</li>
+    <li>awhdh</li>
+    <li>awhdh</li>
+    <li>awhdh</li>
+    <li>awhdh</li>
+    <li>awhdh</li>
+</ol>
+
+</body>
+</html>
