@@ -3,86 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
     <style>
-        div{
-            box-sizing: border-box;
-            width: 990px;
+        body{
+            margin: 0;
             font-size: 12px;
             color: #9c9a9c;
         }
-
-        .fr{
-            text-align: left;
-            width: 610px;
+        a{
+            color: #005aa0;
+            text-decoration: none;
         }
-
-        .time{
-            padding: 0 30px;
-        }
-
         table{
             text-align: center;
             border-bottom: 1px solid lightgray;
+            width: 990px;
+            /*第一行定宽 其他行根据内容自动分配大小*/
+            margin: 30px auto;
         }
-
-        tr{
-            height: 30px;
-        }
-
         th{
             color: #666;
             border-bottom: 1px solid lightgray;
         }
-
         td{
-            border-bottom: 1px dotted lightgray;
+            border-bottom: 1px dashed lightgray;
         }
-
-        a{
-            margin: 0 10px;
-            color: #005aa0;
+        .col1{
+            text-align: left;
+            width: 610px;
         }
-
-
+        th.col1{
+            padding: 6px 5px;
+        }
+        td.col1{
+            padding: 6px 10px;
+        }
     </style>
 </head>
 <body>
-
-<div>
     <table>
         <tr>
-            <th class="fr">主题</th>
+            <th class="col1">主题</th>
             <th>回复/浏览</th>
             <th>作者</th>
             <th class="time">时间</th>
         </tr>
         <tr>
-            <td class="fr"><a>银灰色的，很酷</a></td>
+            <td class="col1">
+                <a href="">银灰色的，很酷</a>
+            </td>
             <td>0/0</td>
-            <td><a>2001年冬天</a></td>
+            <td>
+                <a href="">2001年冬天</a>
+            </td>
             <td class="time">2014-11-19 13:54:40</td>
         </tr>
         <tr>
-            <td class="fr"><a>性价比超高，活动给力</a></td>
+            <td class="col1">
+                <a href="">性价比超高，活动给力</a>
+            </td>
             <td>0/0</td>
-            <td><a>xpx2001</a></td>
+            <td>
+                <a href="">xpx2001</a>
+            </td>
             <td class="time">2014-11-19 13:54:40</td>
         </tr>
         <tr>
-            <td class="fr"><a>外形精致，值得购买</a></td>
+            <td class="col1">
+                <a href="">外形精致，值得购买</a>
+            </td>
             <td>0/0</td>
-            <td><a>xpx2001</a></td>
+            <td>
+                <a href="">xpx2001</a>
+            </td>
             <td class="time">2014-11-19 13:54:40</td>
         </tr>
         <tr>
-            <td class="fr"><a>支持，不错</a></td>
+            <td class="col1">
+                <a href="">支持，不错</a>
+            </td>
             <td>0/0</td>
-            <td><a>2001年冬天</a></td>
+            <td>
+                <a href="">2001年冬天</a>
+            </td>
             <td class="time">2014-11-19 13:54:40</td>
         </tr>
-
     </table>
-</div>
 </body>
 </html>

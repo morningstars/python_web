@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #nav{
+            width: 1000px;
+            height: 50px;
+            margin: 0 auto;
+            background-color: orange;
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+            float: right;
+            list-style: none;
+        }
+        li{
+            float: left;
+        }
+        /*浮动元素不占位 后面正常的元素会向前占位*/
+        /*子元素全部浮动 造成父元素高度为0 影响父元素样式及整体布局*/
+        #main{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div id="nav">
+    <ul>
+        <li>
+            <a href="">淘宝1</a>
+        </li>
+        <li>
+            <a href="">淘宝</a>
+        </li>
+        <li>
+            <a href="">淘宝</a>
+        </li>
+        <li>
+            <a href="">淘宝</a>
+        </li>
+        <li>
+            <a href="">淘宝</a>
+        </li>
+    </ul>
+</div>
+
+<div id="main">示例</div>
+</body>
+</html>

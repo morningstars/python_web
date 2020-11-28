@@ -5,24 +5,56 @@
     <title>Title</title>
 
     <style>
-        div{
+        body{
+            margin: 0;
+        }
+
+        #nav {
             width: 500px;
-            margin: auto;
-            background-color: yellow;
+            height: 50px;
+            margin: 0 auto;
+            background-color: orange;
+            /*父元素设置字体大小为0 为了消除水平方向上由于代码换行
+            导致子元素之间的间隙
+            子元素还需要另外设置字体大小*/
+            font-size: 0;
         }
-        a{
-            margin-left: 10px;
+
+        a {
+            margin-right: 10px;
+            height: 50px;
+            /*取消a标签的下划线*/
+            text-decoration: none;
+            color: #fff;
+            /*background-color: red;*/
+             /*行内元素调整宽高无效 转成行内块才能调整宽高*/
+            display: inline-block;
+            width: 92px;
+            font-size: 20px;
+            text-align: center;
+            /*文本在当前行中永远是垂直居中
+            手动设置行高实现一行文本在元素中垂直居中*/
+            line-height: 50px;
         }
+
+        a:hover{
+            background-color: green;
+        }
+
+        .no-margin{
+            margin: 0;
+        }
+
     </style>
 </head>
 <body>
 
-<div>
-    <a>导航</a>
-    <a>导航</a>
-    <a>导航</a>
-    <a>导航</a>
-    <a>导航</a>
+<div id="nav">
+    <a href="">导航</a>
+    <a href="">导航</a>
+    <a href="">导航</a>
+    <a href="">导航</a>
+    <a href="" class="no-margin">导航</a>
 </div>
 
 </body>
