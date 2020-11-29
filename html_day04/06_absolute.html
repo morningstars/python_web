@@ -37,7 +37,7 @@
             height: 10px;
             border-radius: 50%;
             margin-right: 10px;
-            background-color: green;
+            background-color: white;
         }
 
         /*
@@ -49,7 +49,29 @@
             margin: 0;
         }
         #banner ul li:first-child{
-            background-color: yellow;
+            background-color: gray;
+        }
+
+        .arrow{
+            width: 25px;
+            height: 50px;
+            border-radius: 5px;
+            background-color: lightgray;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        #left_arrow{
+            background-image: url("arrow-left.png");
+            position: absolute;
+            left: 10px;
+            top: 150px;
+        }
+        #right_arrow{
+            background-image: url("arrow-right.png");
+            position: absolute;
+            right: 10px;
+            top: 150px;
         }
     </style>
 </head>
@@ -64,6 +86,10 @@
         <li></li>
         <li></li>
     </ul>
+
+    <div id="left_arrow" class="arrow"></div>
+    <div id="right_arrow" class="arrow"></div>
+
 </div>
 
 </body>
