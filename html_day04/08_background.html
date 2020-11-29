@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /*图片太大显示不出来
+            图片太小自动重复 直至平铺满*/
+            background-image: url("wxy.jpeg");
+            /*设置重复属性 no-repeat repeat-x repeat-y repeat*/
+            background-repeat: no-repeat;
+            /*设置起始坐标
+            取像素值
+            取方位值
+            取百分比值
+            */
+            /*background-position: 10px 10px;*/
+
+            /*background-position: left center;*/
+
+            /*
+            （元素宽-图片宽）*x%
+            （元素高-图片高）*y%
+            */
+            /*background-position: 50% 50%;*/
+
+            /*
+            取像素值
+            百分比值（元素的宽高计算）
+            两个特殊值cover（覆盖，等比拉伸至完全包含元素 超出不可见），contain（包含 等比拉伸至刚好被元素容纳）*/
+            background-size: 100px 100px ;
+        }
+
+        div:hover{
+            background-position: -130px -15px;
+        }
+    </style>
+</head>
+<body>
+
+<div></div>
+
+</body>
+</html>

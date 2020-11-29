@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+           width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        #d1{
+            position: relative;
+            top: 100px;
+            left: 100px;
+            background-color: orange;
+            z-index: 10;
+        }
+        #d1:hover{
+            z-index: 12;
+        }
+        #d2{
+            position: relative;
+            z-index: 11;
+        }
+    /*
+    已定位的元素在未定位的元素上方
+    同为已定位元素 按书写顺序 后来者居上
+    使用z-index属性调整已定位元素的堆叠次序 数值大的在上方
+    */
+    </style>
+</head>
+<body>
+<div id="d1"></div>
+<div id="d2"></div>
+
+</body>
+</html>

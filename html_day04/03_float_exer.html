@@ -4,25 +4,35 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        #nav{
+        #nav {
             width: 1000px;
-            height: 50px;
+            /*height: 50px;*/
             margin: 0 auto;
             background-color: orange;
+            overflow: hidden;
         }
 
-        ul{
+        ul {
             margin: 0;
             padding: 0;
             float: right;
             list-style: none;
         }
-        li{
+
+        li {
             float: left;
         }
-        /*浮动元素不占位 后面正常的元素会向前占位*/
-        /*子元素全部浮动 造成父元素高度为0 影响父元素样式及整体布局*/
-        #main{
+
+        /*浮动元素不占位 后面正常的元素会向前占位
+        解决 ：
+        1)正常元素添加clear*/
+
+        /*子元素全部浮动 造成父元素高度为0 影响父元素样式及整体布局
+        解决：
+        1)父元素添加overflow 适用内容不确定需要动态下载元素 如页面的主体
+        2)添加固定高度 适用于内容固定
+        3)父元素末尾添加空的块元素 设置clear：both*/
+        #main {
             float: left;
         }
     </style>

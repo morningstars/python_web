@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body {
+            position: relative;
+            /*为了处理子元素的margin-top作用于父元素上*/
+            border-top: 1px solid transparent;
+        }
+
+        #box {
+            background-color: orange;
+            width: 500px;
+            height: 5000px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        /*
+        相对定位 relative
+        不会脱离文档流
+        */
+        #d1 {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            top: -20px;
+            left: -50px;
+        }
+
+        /*
+        绝对定位 absolute
+        绝对定位的元素会参照离他最近的已定位的祖先元素进行便宜
+        没有的话最终参照窗口的（0，0）点偏移
+        会脱离文档流（不占位 手动调宽高）
+        使用：
+        一般父元素设置相对定位 子元素设置绝对定位 则子元素相对于父元素进行绝对定位
+        */
+        #d2 {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+
+        /*
+        固定定位 fixed
+        参照浏览器窗口进行偏移不会随着页面的滚动而滚动，脱离文档流
+        例如：聊天窗 导航目录
+        */
+        #chat {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+    <!--    <div id="d1"></div>-->
+    <div id="d2"></div>
+</div>
+
+
+<div id="chat"></div>
+
+</body>
+</html>
