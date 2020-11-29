@@ -53,25 +53,25 @@
         }
 
         .arrow{
-            width: 25px;
-            height: 50px;
+            width: 35px;
+            height: 70px;
             border-radius: 5px;
-            background-color: lightgray;
+            background-color: rgba(0,0,0,.1);
             background-position: center center;
             background-repeat: no-repeat;
+            position: absolute;
+            top: 50%;
+            margin-top: -35px;
         }
 
         #left_arrow{
             background-image: url("arrow-left.png");
-            position: absolute;
-            left: 10px;
-            top: 150px;
+            left: 5px;
+
         }
         #right_arrow{
             background-image: url("arrow-right.png");
-            position: absolute;
-            right: 10px;
-            top: 150px;
+            right: 5px;
         }
     </style>
 </head>
@@ -87,8 +87,8 @@
         <li></li>
     </ul>
 
-    <div id="left_arrow" class="arrow"></div>
-    <div id="right_arrow" class="arrow"></div>
+    <a id="left_arrow" class="arrow" href="javascript:void(0)"></a>
+    <a id="right_arrow" class="arrow" href="javascript:void(0)"></a>
 
 </div>
 
