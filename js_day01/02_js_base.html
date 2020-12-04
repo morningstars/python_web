@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //变量
+    var a;
+    console.log(a)
+
+    var b = 120;
+    c = 400;
+    console.log(c)
+
+    //常量
+    var PI = 3.14
+    console.log(PI)
+
+    var r = 10
+    var len = 2 * r * PI
+    //表示保留n位小数
+    len = len.toFixed(2)
+    var s = PI * r * r
+    console.log(len)
+    console.log(s)
+
+    //number  输出按十进制输出
+    a1 = 100
+    a2 = 053;
+    a3 = 0x53
+
+    console.log(a1)
+    console.log(a2)
+    console.log(a3)
+
+    //string
+    var s1 = "Hello"
+    var s2 = "100"
+
+    //获取制定下标对应字符的unicode编码
+    var code = s1.charCodeAt(0)
+    console.log(code)
+
+    //boolean
+    var isSave = true
+
+
+    console.log(a2, typeof a2)
+    console.log(isSave, typeof isSave)
+
+    //类型转换
+    var aa = 100
+    var ba = true
+
+    var as = aa.toString()
+    var bs = ba.toString()
+    console.log(as, typeof as)
+    console.log(bs, typeof bs)
+
+    var n1 = "12a"
+    var n2 = "120"
+    console.log(Number(n1)) //NaN  not a number
+    console.log(Number(n2)) //120
+    console.log(Number(true))//1
+    console.log(Number(false)) //0
+
+    //parseInt  parseFloat
+    console.log(parseInt(12.11)) //12
+    console.log(parseInt("12hello")) //12
+    console.log(parseInt("dd123")) //NaN
+    console.log(parseInt(true)) //NaN
+
+
+    console.log(parseFloat(12.11)) // 12.11
+    console.log(parseFloat("a12.11")) //NaN
+    console.log(parseFloat("12.11.12")) // 12.11
+
+
+    //Boolean
+
+
+    //自动转换 字符串的加法(+)会将数据转换成string
+    console.log("10" + 5)//105
+    console.log("10" + true)//0true
+    console.log("10" + null)//10null
+    console.log("10" + undefined)//10undefined
+    console.log(10 + 5 + "hello")//15hello
+
+    //其他类型转成Number类型
+    console.log("10" - 5) //5
+    console.log("10a" - 55) //NaN
+    console.log("10" - true) // 9
+    console.log("10" + false) // 10false
+    console.log(true + true) //2
+    console.log(undefined + 10) //NaN
+    console.log(null + 10) //10
+
+
+    var n = 5
+    var r = n++ + ++n + n++ + ++n + n
+    // 5 + 7 +  7  + 9 + 9
+    console.log(r, n) //37 9
+
+
+</script>
+
+</body>
+</html>
