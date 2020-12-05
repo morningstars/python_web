@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function getDay(){
+        var y = prompt("输入年：")
+        var m = prompt("输入月：")
+        var d = prompt("输入日：")
+
+        var re = judge(y,m,d)
+        console.log(re)
+    }
+
+    function judge(year,month,day) {
+        var r = "星期一"
+        return r
+    }
+
+    function isRun(year){
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
+    }
+</script>
+<button onclick="getDay()">获取星期</button>
+</body>
+</html>

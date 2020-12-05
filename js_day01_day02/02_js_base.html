@@ -104,6 +104,19 @@
     console.log(r, n) //37 9
 
 
+    //字符串依次比较每个字符串编码值
+    //其他情况一律转换为number进行数值比较
+    var res1 = "1" > "10" // false
+    var res2 = "2" > "10" //true
+    var res3 = 100 > 10 //true
+    var res4 = "100" > 10 // 转成100 > 10 true
+    var res5 = "100" > true // 转成100 > 1 true
+    var res6 = "hello" > true // 转成NaN > 1 false
+    var res7 = "10" > null // 转成10 > 0 true
+    var res8 = true > false // 转成1 > 0 true
+
+    console.log(res1, res2, res3, res4, res5, res6, res7, res8)
+
 </script>
 
 </body>

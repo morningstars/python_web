@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--创建定时器任务
+页面即将跳转...5
+页面即将跳转...4
+页面即将跳转...3
+...
+console.log('页面已跳转')
+-->
+
+<script>
+    var sec = 6
+    function time(){
+        sec -= 1
+        if(sec == 0){
+            console.log('页面已跳转')
+        }else {
+            console.log('页面即将跳转...' + sec)
+            return
+        }
+    }
+    setInterval(time,1000)
+
+</script>
+
+</body>
+</html>

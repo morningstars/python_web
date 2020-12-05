@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var year = prompt("请输入年份")
+    console.log(year)
+    if (year) {
+        var re = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
+        console.log(re)
+    } else {
+        year = prompt("请输入年份")
+    }
+
+    for (var i = 1; i < 10; i++) {
+        var r = ""
+        for (var j = 1; j <= i; j++) {
+            r = r + i + "*" + j + "=" + i * j + "\t"
+        }
+        console.log(r)
+    }
+
+</script>
+
+</body>
+</html>
