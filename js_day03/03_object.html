@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>成绩单</h1>
+<hr>
+<p>语文成绩：<span id="ch">0</span></p>
+<p>数学成绩：<span id="ma">0</span></p>
+<p>英语成绩：<span id="en">0</span></p>
+<hr>
+<p>总成绩：<span id="ttl">0</span></p>
+<p>平均成绩：<span id="avg">0</span></p>
+
+
+
+<script>
+    var rectangle = {
+        width: 20,
+        height: 10,
+        getSize: function () {
+            return this.width * this.height
+        },
+        getPerimeter: function () {
+            return 2 * (this.height + this.width)
+        }
+    }
+    console.log(rectangle)
+    var s = rectangle.getSize()
+    console.log("面积为：" + s)
+
+
+    var stu = {
+        stuName:"lolo",
+        chinese:90,
+        math:80,
+        english:100,
+        getTotal: function (){
+            return this.chinese + this.math + this.english
+        },
+        getAvg:function (){
+            return this.getTotal() / 3
+        }
+    }
+
+    // var total = stu.getTotal()
+    // var avg = stu.getAvg()
+    // console.log("总分：" + total + "平均分" + avg.toFixed(1))
+
+    //把span中的html内容修改成数据对象的属性
+    ch.innerHTML = stu.chinese
+    ma.innerHTML = stu.math
+    en.innerHTML = stu.english
+    ttl.innerHTML = stu.getTotal()
+    avg.innerHTML = stu.getAvg()
+
+</script>
+
+</body>
+</html>

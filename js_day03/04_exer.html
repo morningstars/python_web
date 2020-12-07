@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--十进制数组123转换成二进制表示的字符串-->
+<!--十进制数组123转换成八进制表示的字符串-->
+
+
+<script>
+
+    var arr = [123]
+    var hexArr = []
+    var result = arr[0]
+    while (result >= 2){
+        hexArr.unshift(result % 2)
+        result = Math.floor(result / 2)
+    }
+    hexArr.unshift(result)
+
+    //转换成字符串
+    var re = hexArr.join("-")
+    console.log(re)
+
+
+
+</script>
+
+</body>
+</html>

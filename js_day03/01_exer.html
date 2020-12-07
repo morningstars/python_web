@@ -13,18 +13,27 @@
 console.log('页面已跳转')
 -->
 
+
+<button id="btn2">跳转到tmooc</button>
+<button id="btn3">跳转到tmooc</button>
+
 <script>
-    var sec = 6
-    function time(){
-        sec -= 1
-        if(sec == 0){
-            console.log('页面已跳转')
-        }else {
-            console.log('页面即将跳转...' + sec)
-            return
-        }
+    btn2.onclick = function () {
+        //让当前的页面引用另一个地址
+        location.href = "http://tmooc.cn"
     }
-    setInterval(time,1000)
+
+
+    btn3.onclick = function () {
+        var sec = 5
+        setInterval(function () {
+            console.log('页面即将跳转...' + sec)
+            sec --
+            if (sec == 0){
+                location.href = "http://tmooc.cn"
+            }
+        }, 1000)
+    }
 
 </script>
 

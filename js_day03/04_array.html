@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul id = "ulscore">
+<!--    <li></li>-->
+<!--    <li></li>-->
+<!--    <li></li>-->
+</ul>
+<script>
+    var arr1 = [1, 2, 3, 4, 5]
+    var arr2 = new Array(1, 2, 3, 4, 5)
+    var arr3 = new Array(100)
+
+    arr1[0] = 0
+
+    console.log(arr1)
+    console.log(arr2)
+    console.log(arr3)
+
+    //数组添加新的元素   超出length  中间为NaN
+    arr1[7] = 100
+
+    for (var i = 0; i < arr1.length; i++) {
+        arr1[i] += 5
+        console.log(arr1[i])
+    }
+
+    //把数组数据显示在列表中
+    var html = ''
+    for (var i = 0; i < arr1.length; i++) {
+        html += '<li>' + arr1[i] + '</li>'
+    }
+
+    console.log(html)
+    ulscore.innerHTML = html
+
+    //forEach 遍历数组
+    arr1.forEach(function (value, index) { console.log(value,index) })
+
+
+    //末尾添加 返回长度
+    arr1.push(11)
+    console.log(arr1)
+
+    //末尾删除 返回删除元素
+    arr1.pop()
+    console.log(arr1.pop())
+
+    //头部添加元素 返回数组长度
+    arr1.unshift(0)
+
+    //头部删除 返回删除元素
+    arr1.shift()
+
+</script>
+</body>
+</html>
