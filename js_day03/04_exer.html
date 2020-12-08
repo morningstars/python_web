@@ -5,27 +5,47 @@
     <title>Title</title>
 </head>
 <body>
+
+<h2>进制转换器</h2>
+<input id="inputNum">
+<button id="binaryBtn">转换成二进制</button>
+<button id="octonaryBtn">转换成八进制</button>
+<p id="pResult">转换结果。。。</p>
+
 <!--十进制数组123转换成二进制表示的字符串-->
 <!--十进制数组123转换成八进制表示的字符串-->
 
 
 <script>
+    binaryBtn.onclick = function () {
+        var binaryArr = []
+        var re = parseInt(inputNum.value)
+        while (re >= 2) {
+            binaryArr.unshift(re % 2)
+            re = Math.floor(re / 2)
+        }
+        binaryArr.unshift(re)
 
-    var arr = [123]
-    var hexArr = []
-    var result = arr[0]
-    while (result >= 2){
-        hexArr.unshift(result % 2)
-        result = Math.floor(result / 2)
+        //转换成字符串
+        var result = binaryArr.join("")
+
+        pResult.innerHTML = result;
     }
-    hexArr.unshift(result)
 
-    //转换成字符串
-    var re = hexArr.join("-")
-    console.log(re)
+    octonaryBtn.onclick = function () {
+        var binaryArr = []
+        var re = parseInt(inputNum.value)
+        while (re >= 8) {
+            binaryArr.unshift(re % 8)
+            re = Math.floor(re / 8)
+        }
+        binaryArr.unshift(re)
 
+        //转换成字符串
+        var result = binaryArr.join("")
 
-
+        pResult.innerHTML = result;
+    }
 </script>
 
 </body>

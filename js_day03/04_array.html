@@ -6,10 +6,10 @@
 </head>
 <body>
 
-<ul id = "ulscore">
-<!--    <li></li>-->
-<!--    <li></li>-->
-<!--    <li></li>-->
+<ul id="ulscore">
+    <!--    <li></li>-->
+    <!--    <li></li>-->
+    <!--    <li></li>-->
 </ul>
 <script>
     var arr1 = [1, 2, 3, 4, 5]
@@ -40,7 +40,9 @@
     ulscore.innerHTML = html
 
     //forEach 遍历数组
-    arr1.forEach(function (value, index) { console.log(value,index) })
+    arr1.forEach(function (value, index) {
+        console.log(value, index)
+    })
 
 
     //末尾添加 返回长度
@@ -56,6 +58,35 @@
 
     //头部删除 返回删除元素
     arr1.shift()
+
+    //删除  替换
+    arr1.splice(0, 2, [12, 12])
+
+    //数组反转
+    arr1.reverse()
+
+    //数组从小到大排序
+    arr1.sort(function (a, b) {
+        //负数表示有小到大
+        //正数表示由大到小
+        return a - b;
+    })
+    console.log(arr1)
+
+
+    //复杂数组排序
+    var list = [
+        {uid: 10, price: 10, count: 50},
+        {uid: 50, price: 40, count: 90},
+        {uid: 30, price: 30, count: 60},
+        {uid: 20, price: 60, count: 30}
+    ]
+
+    list.sort(function (a, b) {
+        return a.uid - b.uid
+    })
+
+    console.log(list)
 
 </script>
 </body>

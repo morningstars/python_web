@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table width="400px" border="1px">
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>名称</th>
+        <th>价格</th>
+        <th>上产日期</th>
+    </tr>
+    </thead>
+    <tbody id="tbodyLap">
+    <tr>
+        <td>101</td>
+        <td>戴尔700</td>
+        <td>￥5000</td>
+        <td>2018-05</td>
+    </tr>
+    <tr>
+        <td>101</td>
+        <td>戴尔700</td>
+        <td>￥5000</td>
+        <td>2018-05</td>
+    </tr>
+    <tr>
+        <td>101</td>
+        <td>戴尔700</td>
+        <td>￥5000</td>
+        <td>2018-05</td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+
+    //多个用户信息一个HTML的table中
+
+    var data1 = [
+        {uid: 505, uname: '戴尔700', price: '￥5000', date: '2018-05'},
+        {uid: 504, uname: '戴尔800', price: '￥5000', date: '2018-05'},
+        {uid: 503, uname: '戴尔900', price: '￥5000', date: '2018-05'},
+        {uid: 502, uname: '戴尔100', price: '￥5000', date: '2018-05'},
+        {uid: 501, uname: '戴尔300', price: '￥5000', date: '2018-05'}
+    ]
+
+    var data2 = [
+        [ 505,  'liu1',  '￥5000',  '2018-05'],
+        [ 505,  'liu1',  '￥5000',  '2018-05'],
+        [ 505,  'liu1',  '￥5000',  '2018-05'],
+        [ 505,  'liu1',  '￥5000',  '2018-05'],
+        [ 505,  'liu1',  '￥5000',  '2018-05']
+    ]
+
+    var html = "";
+
+    for (var i = 0; i < data1.length; i++) {
+        html += "<tr>";
+        html += "<td>" + data1[i].uid + "</td>"
+        html += "<td>" + data1[i].uname + "</td>"
+        html += "<td>" + data1[i].price + "</td>"
+        html += "<td>" + data1[i].date + "</td>"
+        html += "</tr>";
+    }
+
+    tbodyLap.innerHTML = html
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var prices = [10, 20, 30, 40, 90]
+    for (var i = 0; i < prices.length; i++) {
+        prices[i] = prices[i] * 0.9
+        console.log(prices[i])
+    }
+
+    var expensive = prices[0]
+
+    //forEach中修改value的值不会影响原数组的值   此处为值传递
+    prices.forEach(function (value) {
+        expensive = value > expensive ? value : expensive
+    })
+    console.log("最贵的价格：" + expensive)
+
+    function indexOf(arr, e) {
+        var index = -1
+
+        for (var i = 0; i < arr.length; i++) {
+            if (prices[i] == e) {
+                index = i
+                break
+            }
+        } //此处不适合forEach
+        return index
+    }
+
+</script>
+
+</body>
+</html>
