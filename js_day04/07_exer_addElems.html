@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        .blackborder{
+            border: 2px solid black;
+        }
+
+        input {
+            margin-right: 20px;
+            width: 150px;
+            height: 30px;
+            padding-left: 20px;
+            line-height: 30px;
+            font-size: 16px;
+        }
+        .addBtn {
+            width: 150px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        table{
+            margin-top: 20px;
+            width: 680px;
+            height: 500px;
+        }
+
+        td{
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<input type="text" class="blackborder" placeholder="商品名称">
+<input type="text" class="blackborder" placeholder="商品价格">
+<input type="text" class="blackborder" placeholder="购买数量">
+
+<button class="addBtn">增加</button>
+
+<table class="blackborder">
+    <thead>
+    <tr>
+        <td class="blackborder">商品名称</td>
+        <td class="blackborder">商品价格</td>
+        <td class="blackborder">购买数量</td>
+        <td class="blackborder">操作</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td class="blackborder">可口可乐</td>
+        <td class="blackborder">2.5</td>
+        <td class="blackborder">5</td>
+        <td class="blackborder">
+            <button>修改</button>
+            <button>删除</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<!--<div class="content">-->
+<!--    <div class="blackCell">-->
+<!--        <div class="blackCell">商品名称</div>-->
+<!--        <div class="blackCell">商品价格</div>-->
+<!--        <div class="blackCell">商品数量</div>-->
+<!--        <div class="blackCell">操作</div>-->
+<!--    </div>-->
+<!--</div>-->
+
+</body>
+</html>

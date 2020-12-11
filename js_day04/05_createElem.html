@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //创建元素节点
+    var h1 = document.createElement("h1")
+    h1.innerHTML = "动态创建的标题"
+    h1.style.color = "red"
+    h1.id = "d1"
+    console.log(h1)
+
+    //添加至body中
+    //需要父节点添加   appendChild() 父元素末尾添加
+    //动态创建的节点与页面元素一一对应 重复添加无效
+    document.body.appendChild(h1)
+    document.body.appendChild(h1)
+    document.body.appendChild(h1)
+
+    //动态创建h2 插入到h1之前
+    var h2 = document.createElement("h2")
+
+    // 方法一：设置innerHTML
+    // h2.innerHTML = "动态h2"
+
+    //方法二：创建文本节点 作为子节点追加到h2中
+    var text = document.createTextNode("哈哈")
+    h2.appendChild(text)
+
+    //插入新节点在旧节点之前
+    document.body.insertBefore(h2,h1)
+
+    //移除节点
+    document.body.removeChild(h1)
+
+
+</script>
+
+
+</body>
+</html>

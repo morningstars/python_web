@@ -16,27 +16,25 @@
 <button id="startBtn">开始计时</button>
 <button id="stopBtn">停止计时</button>
 
-<img id="banner1" src="index_banner1.jpg" style="display: block">
-<img id="banner2" src="index_banner2.jpg" style="display: none">
-<img id="banner3" src="index_banner3.jpg" style="display: none">
-<img id="banner4" src="index_banner4.jpg" style="display: none">
-<img id="banner5" src="index_banner5.jpg" style="display: none">
+<img id="banner0" src="index_banner1.jpg" style="display: block">
+<img id="banner1" src="index_banner2.jpg" style="display: none">
+<img id="banner2" src="index_banner3.jpg" style="display: none">
+<img id="banner3" src="index_banner4.jpg" style="display: none">
+<img id="banner4" src="index_banner5.jpg" style="display: none">
 
 <script>
     console.log(window)
 
-
-    var banners = [banner1, banner2, banner3, banner4, banner5];
+    //轮播图  定时任务 改变display的值
+    var imgs = document.getElementsByTagName("img")
     var showIndex = 0;
     setInterval(function () {
-        showIndex = showIndex++ % 5;
-        for(var i = 0; i< banners.length; i++){
-            if(i == showIndex){
-                banners[showIndex].display = true
-            }else {
-                banners[showIndex].display = false
-            }
+        showIndex %= 5
+        for(var i = 0; i< imgs.length; i++){
+            var img = imgs[i]
+            showIndex == i ? img.style.display = "block" : img.style.display = "none"
         }
+        showIndex += 1
     },3000)
 
     var timer;

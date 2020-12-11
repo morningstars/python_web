@@ -16,18 +16,19 @@
         }
     </script>
 
+    <style>
+        #h3id {
+            color: red;
+        }
+
+        .h3c1 {
+            background-color: green;
+        }
+    </style>
+
 </head>
 <body>
 
-<h2>属性操作</h2>
-
-<h1>Hello world</h1>
-<h1>Hello world2</h1>
-
-<div class="d1">divdiv</div>
-<div class="d1">divdivdivdivdivdiv</div>
-
-<br>
 
 <div id="id1">divvvvvvv</div>
 
@@ -41,6 +42,13 @@
 <input type="text" name="uname">
 <button onclick="show()">显示</button>
 <div id="uname"></div>
+
+
+<h1>Hello world</h1>
+<h1>Hello world2</h1>
+
+<div class="d1">divdiv</div>
+<div class="d1">divdivdivdivdivdiv</div>
 
 <script>
     //获取元素节点
@@ -72,14 +80,23 @@
 
     data3[0].innerHTML = "<a href=''>百度</a>"
     data3[1].innerText = "<a href=''>百度</a>"
+</script>
 
 
+<h2>属性操作</h2>
+
+
+<br>
+<script>
     var h2 = $("h2");
     // console.log(h2)
     h2.id = "111";
     // h2.name = "info";  //无效
     h2.className = "c1";
     h2.className = "c2 c3";
+
+    // h2.id = null;
+    // h2.className = "";
 
     h2.setAttribute("id", "box");
     console.log(h2.getAttribute("id"))
@@ -89,9 +106,59 @@
 
     //删除属性
     h2.removeAttribute("id")
+</script>
 
+
+<h3>样式操作</h3>
+<p style="background-color: yellow">操作行内样式</p>
+<script>
+    //操作元素样式
+
+    var h3 = $("h3")
+    h3.id = "h3id"
+    h3.className = "h3c1"
+
+    var p = $("p")
+    //获取样式表对象
+    console.log(p.style)
+
+    //覆盖原来的css样式
+    p.style = "color:pink; width:200px; height:200px;background-color:red;"
+
+    //单独修改具体某一条样式 使用驼峰标识
+    p.style.width = "100px"
+    p.style.fontSize = "40px"
+</script>
+
+
+
+<div>
+    <p>前一个p</p>
+    <h4>
+        h4标签
+        <span>
+            h4span
+        </span>
+    </h4>
+    <p>后一个p</p>
+</div>
+<script>
+    var h4 = $("h4")
+    console.log(h4.parentNode) // 获取父元素
+
+    console.log(h4.childNodes) // 子节点数组 包含文本节点和元素节点
+
+    console.log(h4.children)    // 子节点数组 不包含文本节点
+
+    console.log(h4.previousSibling)  //前一个兄弟节点  可以是文本节点
+    console.log(h4.previousElementSibling)   //前一个元素兄弟节点 <p>前一个p</p>
+
+    console.log(h4.nextSibling)  //后一个兄弟节点   可以是文本节点
+    console.log(h4.nextElementSibling)   //后一个元素兄弟节点 <p>后一个p</p>
 
 </script>
+
+
 
 </body>
 </html>

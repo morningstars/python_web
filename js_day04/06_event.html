@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="index.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+<div onclick="alert('被单击')"></div>
+
+<script>
+    //鼠标事件
+    // onclick()
+    // ondblclick()
+    // onmouseover()
+    // onmouseout()
+    // onmousemove()
+
+    //键盘事件
+    // onkeydown()
+    // onkeyup()
+    // onkeypress() //字符键被按下
+
+    //文档或元素加载完毕 执行
+    // onload()
+
+    window.onload = function (){
+        console.log(" window.onload ")
+    }
+
+
+    //事件绑定方式
+    //内联绑定 作为标签属性直接绑定
+    //动态绑定 为元素节点绑定事件
+
+    var div = $('div')
+    div.onmouseover = function () {
+        console.log("鼠标移入")
+    }
+
+    div.onmouseout = function () {
+        console.log("鼠标移出")
+    }
+
+    div.onmousemove = function () {
+        console.log("鼠标移动")
+    }
+
+    onkeydown = function () {
+        console.log("onkeydown")
+    }
+
+    onkeyup = function () {
+        console.log("onkeyup")
+    }
+    onkeypress = function () {
+        console.log("onkeypress")
+    }
+
+
+</script>
+
+</body>
+</html>
