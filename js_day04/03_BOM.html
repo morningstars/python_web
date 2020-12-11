@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--BOM
+ -- brower object model
+ -- 浏览器对象模型
+ -- 无需创建 直接使用 一共七个
+ -->
+
+<!--window-->
+<!--document-->
+<!--screen-->
+<!--location-->
+<!--history  当前窗口的历史记录-->
+<!--navigator-->
+<!--event-->
+
+<button id="btn">删除</button>
+
+<script>
+    //三种弹出对话框
+    //
+    // window.alert("hello") //警告信息
+    // window.prompt("hello") //带输入框的弹框
+    // window.confirm("hello") //确认框
+
+    //打开 关闭窗口
+    //open(url)
+    //close()
+
+    //定时器
+    setInterval()   //设置周期性定时器
+    setTimeout()    //设置一次性定时器
+    clearInterval()//清除定时器
+
+    btn.onclick = function () {
+        var choice = window.confirm("是否删除")
+        console.log(choice) //true false
+        if (choice) {
+            console.log("点击了确认")
+        } else {
+            console.log("点击了取消")
+        }
+    }
+
+    //history的属性和方法
+    //访问过的历史记录数量
+    history.length
+    history.back()
+    history.forward()
+    //正数表示前进n条历史记录  负数表示后退n条历史记录
+    history.go(1)
+    history.go(-1)
+
+
+</script>
+
+
+<!--DOM
+
+-->
+
+</body>
+</html>

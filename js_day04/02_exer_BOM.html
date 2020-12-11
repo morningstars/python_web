@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="closeBtn">关闭当前窗口</button>
+<button id="openBtn">打开TMOOC</button>
+
+<script>
+    closeBtn.onclick = function (){
+        close();  //window.close()
+    }
+
+    openBtn.onclick = function (){
+        open("http://toomc.cn") //在新的窗口中打开
+
+        // location.href = "http://toomc.cn" //在当前窗口中打开
+    }
+
+    //周期性定时器
+    var i = 0
+    setInterval(function (){
+        console.log("hello" + i++)
+    }, 1000)
+
+    //一次性定时器
+    setTimeout(function (){
+        console.log("hello timeout")
+    }, 1000)
+
+
+
+
+</script>
+
+</body>
+</html>

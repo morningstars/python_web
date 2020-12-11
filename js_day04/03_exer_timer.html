@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span id="spanHour">00</span>
+:
+<span id="spanMinute">00</span>
+:
+<span id="spanSecond">00</span>
+:
+<span id="spanMSecond">00</span>
+
+<button id="startBtn">开始计时</button>
+<button id="stopBtn">停止计时</button>
+
+<img id="banner1" src="index_banner1.jpg" style="display: block">
+<img id="banner2" src="index_banner2.jpg" style="display: none">
+<img id="banner3" src="index_banner3.jpg" style="display: none">
+<img id="banner4" src="index_banner4.jpg" style="display: none">
+<img id="banner5" src="index_banner5.jpg" style="display: none">
+
+<script>
+    console.log(window)
+
+
+    var banners = [banner1, banner2, banner3, banner4, banner5];
+    var showIndex = 0;
+    setInterval(function () {
+        showIndex = showIndex++ % 5;
+        for(var i = 0; i< banners.length; i++){
+            if(i == showIndex){
+                banners[showIndex].display = true
+            }else {
+                banners[showIndex].display = false
+            }
+        }
+    },3000)
+
+    var timer;
+
+    startBtn.onclick = function () {
+
+        clearInterval(timer)
+
+        var now = new Date();
+        var h = now.getHours();
+        var m = now.getMinutes();
+        var s = now.getSeconds();
+
+        timer = setInterval(function () {
+            var millis = new Date() - now
+            var ms1 = (millis % 1000);
+            var s1 = parseInt(millis / 1000) % 60;
+            var m1 = parseInt(parseInt(millis / 1000) / 60) % 60;
+            var h1 = parseInt(parseInt(parseInt(millis / 1000) / 60) / 60);
+
+            spanHour.innerHTML = h1
+            spanMinute.innerHTML = m1
+            spanSecond.innerHTML = s1
+            spanMSecond.innerHTML = ms1
+
+        }, 10)
+    }
+    stopBtn.onclick = function () {
+        clearInterval(timer);
+    }
+
+
+</script>
+</body>
+</html>

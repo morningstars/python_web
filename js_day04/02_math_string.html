@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input id="email" value="tom@163.com">
+<button id="splitBtn">拆分</button>
+<p id="uname"></p>
+<p id="hostname"></p>
+
+
+<table id="listTable">
+
+</table>
+
+<script>
+    console.log(Math.PI)
+    Math.random()//随机数  [0-1)
+    Math.round()//四舍五入
+    Math.sin()
+    Math.abs()
+    Math.floor()
+    Math.ceil()
+
+    //随机四位整数 1000~9999
+    var i1 = parseInt(Math.random() * 9000 + 1000)
+    console.log(i1)
+
+    var s = "aAzZ09一二三"
+    console.log(s.charCodeAt(0)) // a 97
+    console.log(s.charCodeAt(1)) // A 65
+    console.log(s.charCodeAt(2))
+    console.log(s.charCodeAt(3))
+    console.log(s.charCodeAt(4))
+    console.log(s.charCodeAt(5))
+    console.log(s.charCodeAt(6))
+    console.log(s.charCodeAt(7))
+    console.log(s.charCodeAt(8))
+
+    s.indexOf("a")
+    s.lastIndexOf("a")
+
+    //例题 判断有且只有一个@符号
+    var s2 = "198yhd@kab82 kabd@asd123"
+    fi = s2.indexOf("@")
+    li = s2.lastIndexOf("@")
+    if (fi == li && fi != -1) {
+        console.log("有且仅有一个@")
+    }
+
+
+    s.toUpperCase()
+    s.toLowerCase()
+
+    //字符串的两端删除空白字符
+    s.trim()
+
+    //子串
+    console.log(s.substring(0, 2)) // [0,2)
+    console.log(s.substring(2)) // [2,length]
+
+    //例题 输出邮箱用户名和域名
+    splitBtn.onclick = function () {
+        var index = email.value.indexOf("@")
+        var u = email.value.substring(0, index)
+        var h = email.value.substring(index+1)
+
+        uname.innerHTML = u
+        hostname.innerHTML = h
+    }
+
+
+    // 拆分成子串的数组   与array.join()为反向操作
+    var s4 = "123#456#789"
+    console.log(s4.split("#"))
+
+    //数据展示到table中
+    var data = "丁丁#55#65$当当#78#99$逗逗#65#99";
+    var dataArray = data.split("$")
+    var list = []
+    for(var i=0;i<dataArray.length;i++){
+        var arr = dataArray[i].split("#")
+        list.push(arr)
+    }
+    console.log(list)
+
+    var html = ""
+
+    list.forEach(function (value) {
+        console.log(value)
+        html += "<tr>"
+            value.forEach(function (value1) {
+                html = html + "<td>" + value1 + "</td>"
+            })
+        html += "</tr>"
+    })
+
+
+    // for(var i = 0; i<list.length; i++){
+    //     html += "<tr>"
+    //     html = html + "<td>" + list[i][0] + "</td>"
+    //     html = html + "<td>" + list[i][1] + "</td>"
+    //     html = html + "<td>" + list[i][2] + "</td>"
+    //     html += "</tr>"
+    // }
+
+    listTable.innerHTML = html
+
+
+    // str.replace(regexp|substr, newSubStr|function)
+    // 返回新str 只有第一个被替换 想要全部替换 需要使用正则表达式
+    //g-global 全局匹配 i=ingorecase忽略大小写
+    var regexp = /一/gi
+    var newStr = s.replace("一","123")
+    console.log(newStr)
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--    引入js文件    -->
+    <script src="index.js"></script>
+    <script>
+        function show() {
+            // var input = document.getElementsByTagName("input")[0];
+            var input = $("input")
+            console.log(input.value);
+
+            uname.innerHTML = "<h1>" + input.value + "</h1>";
+        }
+    </script>
+
+</head>
+<body>
+
+<h2>属性操作</h2>
+
+<h1>Hello world</h1>
+<h1>Hello world2</h1>
+
+<div class="d1">divdiv</div>
+<div class="d1">divdivdivdivdivdiv</div>
+
+<br>
+
+<div id="id1">divvvvvvv</div>
+
+<br>
+
+<div name="info">infomation</div>
+<div name="info">infomationnnnnn</div>
+
+<br>
+
+<input type="text" name="uname">
+<button onclick="show()">显示</button>
+<div id="uname"></div>
+
+<script>
+    //获取元素节点
+    //1)根据标签名
+    var data = document.getElementsByTagName("h1")
+    console.log(data)
+    data[0].innerHTML = "哈哈"
+
+    //2)根据类名
+    var data2 = document.getElementsByClassName("d1")
+    console.log(data2)
+    data2[0].innerHTML = "呵呵"
+
+    //3)根据name
+    var data3 = document.getElementsByName("info")
+    console.log(data3)
+    data3[1].innerHTML = "info"
+
+    //4)根据id  获取唯一的元素
+    var data4 = document.getElementById("id1")
+    console.log(data4)
+    data4.innerHTML = "动态修改"
+
+
+    //操作元素内容
+    //1)innerHTML
+    //2)innerText
+    //3)value 读取或设置表单控件的值
+
+    data3[0].innerHTML = "<a href=''>百度</a>"
+    data3[1].innerText = "<a href=''>百度</a>"
+
+
+    var h2 = $("h2");
+    // console.log(h2)
+    h2.id = "111";
+    // h2.name = "info";  //无效
+    h2.className = "c1";
+    h2.className = "c2 c3";
+
+    h2.setAttribute("id", "box");
+    console.log(h2.getAttribute("id"))
+
+    h2.setAttribute("class", "c4 c5");
+    console.log(h2.getAttribute("class"))
+
+    //删除属性
+    h2.removeAttribute("id")
+
+
+</script>
+
+</body>
+</html>
