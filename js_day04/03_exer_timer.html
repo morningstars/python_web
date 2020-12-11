@@ -3,8 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="index.js"></script>
+    <style>
+        #banner {
+            width: 1000px;
+            height: 400px;
+            margin: 50px auto;
+        }
+
+        #banner img {
+            width: 1000px;
+            height: 400px;
+            display: none;
+        }
+
+        #banner img:first-child {
+            display: block;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            //轮播图  定时任务 改变display的值
+
+            // var imglist = document.getElementsByTagName("img")
+            // console.log(imglist)
+
+            var banner = $("div")
+            var imgs = banner.children
+            console.log(imgs)
+            var timer = setInterval(autoPlay, 1500)
+
+            var showIndex = 0;
+
+            function autoPlay() {
+                imgs[showIndex].style.display = "none"
+                showIndex++
+                showIndex %= imgs.length
+                imgs[showIndex].style.display = "block"
+            }
+
+            banner.onmouseover = function () {
+                clearInterval(timer)
+            }
+
+            banner.onmouseout = function () {
+                timer = setInterval(autoPlay, 1500)
+            }
+        }
+    </script>
 </head>
 <body>
+
+
+<!--轮播图-->
+<div id="banner">
+    <img src="index_banner1.jpg" alt="">
+    <img src="index_banner2.jpg" alt="">
+    <img src="index_banner3.jpg" alt="">
+    <img src="index_banner4.jpg" alt="">
+    <img src="index_banner5.jpg" alt="">
+</div>
+
+
 <span id="spanHour">00</span>
 :
 <span id="spanMinute">00</span>
@@ -16,26 +77,8 @@
 <button id="startBtn">开始计时</button>
 <button id="stopBtn">停止计时</button>
 
-<img id="banner0" src="index_banner1.jpg" style="display: block">
-<img id="banner1" src="index_banner2.jpg" style="display: none">
-<img id="banner2" src="index_banner3.jpg" style="display: none">
-<img id="banner3" src="index_banner4.jpg" style="display: none">
-<img id="banner4" src="index_banner5.jpg" style="display: none">
-
 <script>
-    console.log(window)
-
-    //轮播图  定时任务 改变display的值
-    var imgs = document.getElementsByTagName("img")
-    var showIndex = 0;
-    setInterval(function () {
-        showIndex %= 5
-        for(var i = 0; i< imgs.length; i++){
-            var img = imgs[i]
-            showIndex == i ? img.style.display = "block" : img.style.display = "none"
-        }
-        showIndex += 1
-    },3000)
+    //计时器
 
     var timer;
 

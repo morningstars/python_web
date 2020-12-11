@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="index.js"></script>
 
     <style>
 
@@ -10,7 +11,12 @@
             border: 2px solid black;
         }
 
+        .redborder{
+            border: 2px solid red;
+        }
+
         input {
+            outline: none;
             margin-right: 20px;
             width: 150px;
             height: 30px;
@@ -18,7 +24,7 @@
             line-height: 30px;
             font-size: 16px;
         }
-        .addBtn {
+        #addBtn {
             width: 150px;
             height: 30px;
             line-height: 30px;
@@ -44,12 +50,14 @@
             height: 30px;
             line-height: 30px;
             text-align: center;
+            color: red;
         }
 
         .optionBtn{
             width: 70px;
             height: 25px;
             line-height: 25px;
+            color: red;
         }
 
 
@@ -57,13 +65,13 @@
 </head>
 <body>
 
-<input type="text" class="blackborder" placeholder="商品名称">
-<input type="text" class="blackborder" placeholder="商品价格">
-<input type="text" class="blackborder" placeholder="购买数量">
+<input id="inputname" type="text" class="blackborder" placeholder="商品名称">
+<input id="inputprice" type="text" class="blackborder" placeholder="商品价格">
+<input id="inputcount" type="text" class="blackborder" placeholder="购买数量">
 
-<button class="addBtn">增加</button>
+<button id="addBtn">增加</button>
 
-<div class="content blackborder">
+<div id="divcontent" class="content blackborder">
     <div class="rowcell blackborder">
         <div class="cell blackborder">商品名称</div>
         <div class="cell blackborder">商品价格</div>
@@ -71,16 +79,44 @@
         <div class="cell blackborder">操作</div>
     </div>
 
-    <div class="rowcell blackborder">
-        <div class="cell blackborder">可口可乐</div>
-        <div class="cell blackborder">2.5</div>
-        <div class="cell blackborder">5</div>
-        <div class="cell blackborder">
+    <div class="rowcell redborder">
+        <div class="cell redborder">可口可乐</div>
+        <div class="cell redborder">2.5</div>
+        <div class="cell redborder">5</div>
+        <div class="cell redborder">
             <button class="optionBtn">修改</button>
             <button class="optionBtn">删除</button>
         </div>
     </div>
 </div>
+
+<script>
+    addBtn.onclick = function (){
+        var name = document.getElementById("inputname").value
+        var price = document.getElementById("inputprice").value
+        var count = document.getElementById("inputcount").value
+
+        var content = document.getElementById("divcontent")
+
+        var div = document.createElement("div")
+        var html = '<div class="rowcell redborder">\n' +
+            '        <div class="cell redborder">' + name + '</div>\n' +
+            '        <div class="cell redborder">' + price + '</div>\n' +
+            '        <div class="cell redborder">' + count + '</div>\n' +
+            '        <div class="cell redborder">\n' +
+            '            <button class="optionBtn">修改</button>\n' +
+            '            <button class="optionBtn">删除</button>\n' +
+            '        </div>\n' +
+            '    </div>'
+
+        div.innerHTML = html
+        content.appendChild(div)
+
+    }
+
+
+
+</script>
 
 </body>
 </html>
