@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="index.js"></script>
+    <style>
+        ul,ol{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 200px;
+            background-color: orange;
+            cursor: pointer; /* 默认default */ <!-- -->
+        }
+
+        ol{
+            background-color: green;
+            display: none;
+        }
+
+        ul li:first-child:hover ol{
+            /*background-color: red;*/
+            display: block;
+        }
+
+        ol li:hover{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    function f1() {
+        console.log(this) // Window
+    }
+    f1()
+
+</script>
+
+
+<ul>
+    <li>
+        <span>北京</span>
+        <ol>
+            <li>北京</li>
+            <li>上海</li>
+            <li>广州</li>
+            <li>深圳</li>
+        </ol>
+
+    </li>
+</ul>
+
+<script>
+    var span = $("span")
+    var lis = $("ol").children
+    for (var i =0; i<lis.length; i++){
+        lis[i].onclick = function (){
+            //this 指代事件的触发对象
+            span.innerHTML = this.innerHTML
+        }
+    }
+</script>
+
+</body>
+</html>

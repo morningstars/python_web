@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="index.js"></script>
+    <script>
+        window.onload = function (){
+            var form = $("form")
+            var uname = $("input")
+            var hobby = $("input",1)
+
+            //文本框获取焦点
+            uname.onfocus = function (){
+                console.log("输入框获取焦点")
+            }
+
+            //文本框失去焦点
+            uname.onblur = function (){
+                console.log("失去焦点", uname.value)
+            }
+
+            //实时监听
+            uname.oninput = function (){
+                // console.log(uname.value)
+            }
+
+            uname.onchange = function (){
+                //失去焦点时判断前后两次内容发生变化
+                console.log("输入框内容发生变化")
+            }
+
+            //按钮选中状态发生变化
+            hobby.onchange = function (){
+                console.log(hobby.checked)
+            }
+
+            //onsubmit 由form监听 在点击提交按钮时自动触发
+            //通过返回值表示是否可以将数据发送给服务器
+            form.onsubmit = function (){
+                if (uname.value.length == 0){
+                    return false
+                }
+                return true
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+<!--默认是get方式  二进制需要post-->
+<form action="/login" method="get" enctype="application/x-www-form-urlencoded">
+    <p>
+        姓名：
+        <input name="uname">
+    </p>
+    <p>
+        用户兴趣：
+        <input type="checkbox" name="hobby" checked>学习
+    </p>
+
+    <button type="submit">提交</button>
+
+</form>
+
+</body>
+</html>
