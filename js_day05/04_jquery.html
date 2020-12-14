@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        window.onload = function (){
+            //jquery 获取元素
+            console.log($("h1"))
+            // console.log(document.getElementsByTagName("h1"))
+
+            //操作元素内容  遍历所有元素 统一修改
+            $("h1").html("动态修改")
+
+            //获取原生js对象
+            console.log($("h1")[0])
+
+            $("h1")[0].innerHTML = "哈哈"
+            $("h1").get(1).innerHTML = "get(index)转原生"
+
+            //原生转jquery
+            var h1 = $("h1")[0]
+            console.log($(h1))
+
+            //jquery 提供eq（index)从元素列表中获取指定元素 返回jquery对象
+            $("h1").eq(2).html("eq(idnex)返回jquery对象")
+        }
+
+
+        /*选择器分类
+        $("div) $(".cls") $("#id") $("ul,ol")
+        *
+        *
+        * */
+    </script>
+</head>
+<body>
+
+<h1>head</h1>
+<h1>head</h1>
+<h1>head</h1>
+
+<p>head</p>
+<span>head</span>
+<label>head</label>
+</body>
+</html>

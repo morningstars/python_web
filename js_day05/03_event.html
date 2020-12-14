@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="index.js"></script>
+    <SCRIPT>
+        window.onload = function (){
+            $("div").onclick = function (ev){
+                console.log(ev)
+                //鼠标在元素中的位置
+                console.log(ev.offsetX,ev.offsetY)
+                //鼠标在屏幕中的位置
+                console.log(ev.screenX,ev.screenY)
+            }
+        }
+    </SCRIPT>
+</head>
+<body>
+
+<div style="width: 100px;height: 100px;background-color: red"></div>
+
+<script>
+    onkeydown = function (ev) {
+        //
+        console.log(ev)
+        console.log(ev.key, ev.code)
+    }
+
+    onkeypress = function (ev) {
+
+    }
+
+    onkeyup = function (ev) {
+
+    }
+</script>
+
+</body>
+</html>

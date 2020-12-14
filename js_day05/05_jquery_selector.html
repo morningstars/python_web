@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        window.onload = function () {
+            /**********   基础选择器   **********/
+            //html 等于原生的innerHTML
+            $("#d1").html("<a href>超链接</a>")
+
+            //text 等于原生的innerText 不能识别标签语法
+            $(".c1").text("<a href>超链接</a>")
+
+            //群组选择器
+            //操作行内样式
+            $("#d1,.c1,a").css("color", "red")
+
+
+            /**********   层级选择器   **********/
+            //1）后代选择器 " "
+            console.log($("div h3"))
+
+            //2）子代选择器 ">"
+            console.log($("div>p"))
+
+            //3）相邻选择器  "+"
+            //查找h3后面相邻的兄弟元素 满足p选择器 返回1个
+            console.log($("h3+p"))
+
+            //4）兄弟选择器  "~"
+            //查找h3后面的兄弟元素 满足p选择器 返回多个
+            console.log($("h3~p"))
+
+
+            /**********   过滤选择器   **********/
+            //与伪类选择器类似 与基础选择器结合使用
+
+            //1）:first 查找第一个元素
+            console.log($("p:first"))
+
+            //2）:last 查找最后一个元素
+            console.log($("p:last"))
+
+            //3) :odd  奇数下标
+            //4) :even 偶数下标
+            //5) :lt(index)  小于
+            //6) :gt(index)  大于
+            //7) :eq(index)  等于 指定下标
+
+            //8) :not(选择器,选择器)  否定筛选
+
+
+            /**********   属性选择器   **********/
+            //1） [attrName]             匹配包含指定属性的元素 模糊匹配
+            //2） [attrName = value]     匹配属性为value的元素 精确匹配
+            //3） [attrName ^= value]    匹配以指定字符开头
+            //4） [attrName $= value]    匹配以指定字符结尾
+            //5） [attrName *= value]    匹配包含指定字符的元素
+
+            console.log($("[id]"))
+            console.log($("[id = h5d1]"))
+            console.log($("[id ^= h5]"))
+            console.log($("[id $= d1]"))
+            console.log($("[id *= 2]"))
+
+
+            /**********   子元素选择器   **********/
+            //1）:first-child 匹配第一个子元素
+            //2）:last-child 匹配最后一个子元素
+            //3）:nth-child(n) 匹配第n个子元素 n>= 1
+
+            $("li:first").css("background-color", "red")
+            $("li:last").css("background-color", "green")
+
+            $("li:first-child").css("background-color", "orange")
+            $("li:last-child").css("background-color", "cyan")
+
+            console.log($("li:nth-child(3)").css("text-align", "center"))
+
+        }
+
+
+        function first() {
+            $("h4:first").css("color", "red")
+        }
+
+        function last() {
+            $("h4:last").css("color", "blue")
+        }
+
+        function odd() {
+            $("h4:odd").css("background", "purple")
+        }
+
+        function even() {
+            $("h4:even").css("background", "yellow")
+        }
+
+        function eq() {
+            $("h4:eq(1)").css("color", "pink")
+        }
+
+        function lt() {
+            $("h4:lt(2)").css("color", "green")
+        }
+
+        function gt() {
+            $("h4:gt(4)").css("color", "cyan")
+        }
+
+        function not() {
+            // $("h4:not(#id1,.cl1)").css("font-size", "36px")
+            $("h4:not(:eq(5))").css("font-size", "11px")
+
+        }
+    </script>
+</head>
+<body>
+<h1 id="d1">标题</h1>
+<h2 class="c1">标题2</h2>
+
+<div>
+    <p>参考1</p>
+    <h3>标题3</h3>
+    <span>span</span>
+    <p>参考2</p>
+    <p>参考3</p>
+</div>
+
+
+<h4 class="cl1">标题</h4>
+<h4 id="id1">标题</h4>
+<h4>标题</h4>
+<h4 class="cl1">标题</h4>
+<h4>标题</h4>
+<h4>标题</h4>
+<h4>标题</h4>
+<h4>标题</h4>
+<button onclick="first()">:first</button>
+<button onclick="last()">:last</button>
+<button onclick="odd()">:odd</button>
+<button onclick="even()">:even</button>
+<button onclick="eq()">:eq()</button>
+<button onclick="lt()">:lt()</button>
+<button onclick="gt()">:gt()</button>
+<button onclick="not()">:not()</button>
+
+
+<h5 id="h5d1">标题5</h5>
+<h5 id="h5d2">标题5</h5>
+<h5 id="h5d3">标题5</h5>
+
+
+<ul>
+    <li>cell</li>
+    <li>cell</li>
+    <li>cell</li>
+    <li>cell</li>
+</ul>
+
+<ul>
+    <li>cell</li>
+    <li>cell</li>
+    <li>cell</li>
+    <li>cell</li>
+</ul>
+
+
+</body>
+</html>

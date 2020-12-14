@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        /**********   操作元素样式   **********/
+        //addClass()        添加类名
+        //removeClass()     移除类名
+        //toggleClass()     动态切换类名 有则移除，无则添加
+
+        //操作行内样式
+        //css("attrName", "value")
+        //css(JSON对象)
+
+
+    </script>
+    <style>
+        #d1 {
+            font-size: 32px;
+        }
+
+        .c1 {
+            font-weight: 700;
+        }
+
+        .c2 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<p>段落</p>
+<span>操作类名</span>
+<br>
+<label>label</label>
+<button onclick="show()">按钮</button>
+<div></div>
+<script>
+    var p =  $("p")
+    //会覆盖前面设置的class
+   p.prop("id", "d1").prop("class", "c1").prop("class", "c1 c2")
+
+    // p.removeClass("c1")
+    // p.addClass("c1")
+
+    // p.toggleClass("c2")
+
+    var span = $("span")
+    span.addClass("c1 c2")
+
+    function show(){
+        var label = $("label")
+        label.toggleClass("c1 c2")
+    }
+
+    var div = $("div")
+    div.css("height","200px").css("border","1px solid red").css({
+        height:"100px",
+        width:"100px",
+        "background-color":"green",
+        backgroundColor:"red"
+    })
+
+    // var styleJson = {
+    //     height:"100px",
+    //     width:"100px",
+    //     backgroundColor:"green"
+    // }
+    //
+    // div.css(styleJson)
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        window.onload = function () {
+            /**********   操作标签属性   **********/
+
+            // 1）attr() 设置或读取属性 不会监听属性值的改变，只能查看静态的属性值
+
+            //  2）prop()  即property 设置或读取属性 可监听属性值的动态改变
+
+            //  3）removeAttr()
+        }
+    </script>
+</head>
+<body>
+
+<h1>标题</h1>
+<label><input type="checkbox" checked></label>
+<button onclick="show()">显示</button>
+<script>
+    var h1 = $("h1")
+
+    // jquery的链式调用
+    h1.attr("id", "d1").attr("class", "c1")
+    console.log(h1.attr("id"), h1.attr("class"))
+    //删除id属性
+    h1.removeAttr("id")
+
+    function show() {
+        var input = $("input")
+        // console.log(input.attr("checked"))
+        // console.log(input.prop("checked"))
+
+        //读取或设置表单元素的选中状态，只能用prop()
+        var isChecked = input.prop("checked")
+        console.log(isChecked)
+        //修改元素状态
+        input.prop("checked", !isChecked)
+    }
+
+</script>
+
+</body>
+</html>

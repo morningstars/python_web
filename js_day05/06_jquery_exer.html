@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+
+<input type="text">
+<button id="showText">显示</button>
+<div></div>
+
+<script>
+    $("#showText").click(function () {
+        $("div").html("<h1>" + $("input").val() + "</h1>")
+    })
+</script>
+
+<!--checkbox的全选和取消全选 监听onclick or onchange
+  反选 判断选中的数量是否等于列表的长度 -->
+
+<input type="checkbox" id="total">
+<br>
+<input class="subCheck" type="checkbox">
+<input class="subCheck" type="checkbox">
+<input class="subCheck" type="checkbox">
+<input class="subCheck" type="checkbox">
+
+<script>
+    var total = document.getElementById("total")
+    total.onclick = function () {
+        if (total.checked) {
+            selectAll()
+        } else {
+            unselectAll()
+        }
+    }
+
+    var inputList = document.getElementsByClassName("subCheck")
+    for (var i = 0; i < inputList.length; i++) {
+        inputList[i].onclick = function () {
+            judgeSelectAll()
+        }
+    }
+
+    function selectAll() {
+        var inputList = document.getElementsByClassName("subCheck")
+        for (var i = 0; i < inputList.length; i++) {
+            inputList[i].checked = true
+        }
+    }
+
+    function unselectAll() {
+        var inputList = document.getElementsByClassName("subCheck")
+        for (var i = 0; i < inputList.length; i++) {
+            inputList[i].checked = false
+        }
+    }
+
+    function judgeSelectAll() {
+        var checkNum = 0
+        for (var i = 0; i < inputList.length; i++) {
+            if (inputList[i].checked) {
+                checkNum += 1
+            }
+        }
+        total.checked = checkNum == inputList.length
+    }
+
+</script>
+
+</body>
+</html>
