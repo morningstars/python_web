@@ -4,8 +4,63 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="jquery-1.11.3.js"></script>
+    <script>
+        /**********   根据层次结构获取元素   **********/
+
+        //  parent()                    查看父元素
+        //  parents() / parents("selector")         查看祖先元素 / 查看满足选择器的祖先元素
+        //  children()                  获取子元素列表 只获取直接子元素
+        //  children("selector")        获取子元素列表 指定查找
+        //  find("selector")            找到后代子元素 包括直接和间接
+        //  next() / next("selector")   获取下一个兄弟元素/必须满足选择器
+        //  prev() / prev("selector")   获取上一个兄弟元素/必须满足选择器
+        //  siblings() / siblings("selector")   获取所有兄弟元素 / 获取所有满足选择器的兄弟元素
+
+    </script>
 </head>
+
 <body>
+
+<div id="box">
+    <p>前一个P</p>
+    <h1>superman</h1>
+    <h1>superman</h1>
+    <div class="left">
+        <h1>标题</h1>
+    </div>
+    <h1>隔壁老王</h1>
+    <h1>隔壁老王</h1>
+    <p>后一个P</p>
+</div>
+
+<script>
+
+    //查找父元素
+    var h1 = $("h1")
+
+    console.log("parent : ", h1.parent())
+    console.log("parents : ", h1.parents())
+    console.log("指定查找 : ", h1.parents("#box"))
+
+    //查找子元素
+    var box = $("#box")
+    console.log("children：", box.children())
+    console.log("指定查找children：", box.children("h1"))
+
+    console.log(box.find("h1"))
+
+    //查找兄弟元素
+    var left = $(".left")
+    left.next().css("color","pink")
+    left.next("p").css("color","pink")
+    left.prev().css("color","green")
+    left.prev("p").css("color","green")
+
+    console.log(left.siblings())
+    console.log(left.siblings("p"))
+
+
+</script>
 
 
 </body>
