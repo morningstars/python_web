@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        /**********   事件   **********/
+
+        //  ready() 三种语法  原生的onload()
+        //  语法一
+        $(document).ready(function () {
+
+        })
+
+        //  语法二
+        $().ready(function () {
+
+        })
+
+        //  语法三
+        $(function () {
+
+        })
+
+        //  ready() 和 onload()的区别
+        //  1.onload()不能重复调用  ready()可以  并依次执行
+
+
+        //绑定方式
+        //  1)  on()    $("h1").on("click", function(){})
+        //  2)  bind()  $("h1).bind("click",function(){})
+        //  3)  事件名称省略on前缀 例：  $("h1").click(function(){})
+
+        //this关键字 需要使用$(this)转换成jquery对象 才能调用jquery方法
+
+        $(function (){
+            $("div").on("click",function (){
+                alert("div被点击")
+            })
+            .bind("mouseover",function (){
+                console.log("鼠标移入")
+            })
+            .mouseout(function (){
+                console.log("鼠标移出")
+            })
+        })
+
+        $(function (){
+            $("li").click(function (){
+
+                //this指代事件触发对象 原生js对象
+                console.log(this.innerHTML)
+                //转换jquery对象 调用jquery方法 $(this)
+                console.log($(this).html())
+
+                $("h1").html($(this).html())
+            })
+        })
+
+
+
+
+        //只会弹出"3" 后面的onload()覆盖前面的onload
+        // window.onload = function (){
+        //     alert("1")
+        // }
+        // window.onload = function (){
+        //     alert("2")
+        // }
+        // window.onload = function (){
+        //     alert("3")
+        // }
+
+        //3个弹框都会弹出  依次弹出1，2，3
+        // $(document).ready(function (){
+        //      alert("1")
+        // })
+        // $().ready(function (){
+        //      alert("2")
+        // })
+        // $(function (){
+        //     alert("3")
+        // })
+
+    </script>
+</head>
+<body>
+
+<ul>
+    <li>老王1</li>
+    <li>老王2</li>
+    <li>老王3</li>
+</ul>
+<h1>hello </h1>
+
+<div style="width: 100px;height: 100px; background-color: red"></div>
+
+<div style="width: 100px;height: 100px; background-color: green"></div>
+
+
+</div>
+
+
+</body>
+</html>
