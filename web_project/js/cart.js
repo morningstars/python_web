@@ -82,13 +82,11 @@ $(function () {
         var price = 0
         $(".checkItem[checked]").each(function () {
             var n = $(this).parents(".item").find(".gCount input").val()
-            var p = $(this).parents(".item").find(".gSum").html().substr(1)
-
+            var p = $(this).parents(".item").find(".gSum").html()
+            console.log(n)
+            console.log(p)
             num += Number(n)
-            price += Number(p)
-
-            console.log(num)
-            console.log(price)
+            price += Number(p.substring(1))
         })
         $("#total-num").html(num)
         $("#total-price").html(price.toFixed(2) + "元")
